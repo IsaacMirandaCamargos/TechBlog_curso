@@ -1,11 +1,300 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}" media="screen" />
+    <title>Tech Blog</title>
 </head>
+
 <body>
-    <h1>Olá Mundo!</h1>
+
+    <header>
+        <!-- Nav start -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">Tech BLOG</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./posts-list.html">Stories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#footer-contact">Contato</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Nav end -->
+
+        <!-- Hero start -->
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1 class="h1">Adventure is worthwhile</h1>
+                <p>A <strong>Tech BLOG</strong> to adventurers hackers</p>
+                <a href="./posts-list.html" class="btn btn-light btn-lg">Descubra</a>
+            </div>
+        </div>
+        <!-- Hero end -->
+    </header>
+
+    <!-- Introduction section start-->
+    <section class="mb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3 class="h2">Blog TECH, porque o simples é essencial </h1>
+                        <p class="text-lg lh-lg fw-light">Place a nice <b>introduction</b> here <b>to catch reader's
+                                attention</b>. Lorem ipsum dolor
+                            sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            magna aliqua. Ut enim ad minim veniam, quis nostrud nisi ut aliquip ex ea commodo consequat.
+                            Duis aute irure dolor in reprehenderi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Introduction section end -->
+
+    <!-- Featured section start -->
+    <section>
+        <div class="container">
+            <header class="mb-5">
+                <h2 class="h1">Destaques</h2>
+            </header>
+            <div class="row d-flex flex-row-reverse g-0 mb-3">
+                <div class="col-lg-5">
+                    <img class="featured-home-post-image h-100" src="{% static '/img/neom-d-unsplash.jpg' %}"
+                        alt="post image description">
+                </div>
+                <div class="col-lg-7">
+                    <div class="background-gray-200 py-5 px-5 h-100">
+                        <h4 class="fw-light text-gray-700">Categoria</h4>
+                        <h1>Bard vs GPT, quem ganha?</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur
+                            adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                        <div class="featured-home-post-author">
+                            <img src="https://avatars.githubusercontent.com/u/88542223?v=4" alt="autor">
+                            <span class="foot-divisor">|</span>
+                            <span><i class="fa-regular fa-clock"></i> 2 months ago</span>
+                            <span class="foot-divisor">|</span>
+                            <span><i class="fa-regular fa-comment"></i> 12</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex g-0 mb-3">
+                <div class="col-lg-5">
+                    <img class="featured-home-post-image h-100" src="{% static '/img/neom-l-unsplash.jpg' %}"
+                        alt="post image description">
+                </div>
+                <div class="col-lg-7">
+                    <div class="py-5 px-5 h-100">
+                        <h4 class="fw-light text-gray-700">Categoria do post</h4>
+                        <h1>Chat GPT Prompts</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur
+                            adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                        <div class="featured-home-post-author">
+                            <img src="https://avatars.githubusercontent.com/u/88542223?v=4" alt="autor">
+                            <span class="foot-divisor">|</span>
+                            <span><i class="fa-regular fa-clock"></i> 2 months ago</span>
+                            <span class="foot-divisor">|</span>
+                            <span><i class="fa-regular fa-comment"></i> 12</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex flex-row-reverse g-0">
+                <div class="col-lg-5">
+                    <img class="featured-home-post-image h-100" src="{% static '/img/neom-f-unsplash.jpg' %}"
+                        alt="post image description">
+                </div>
+                <div class="col-lg-7">
+                    <div class="background-gray-200 py-5 px-5 h-100">
+                        <h4 class="fw-light text-gray-700">Categoria do post</h4>
+                        <h1>Modelos Hugging Face</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur
+                            adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                        <div class="featured-home-post-author">
+                            <img src="https://avatars.githubusercontent.com/u/88542223?v=4" alt="autor">
+                            <span>Leandro Cruvinel</span>
+                            <span class="foot-divisor">|</span>
+                            <span><i class="fa-regular fa-clock"></i> 2 months ago</span>
+                            <span class="foot-divisor">|</span>
+                            <span><i class="fa-regular fa-comment"></i> 12</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured section end -->
+
+    <!-- Last posts section start -->
+    <section>
+        <div class="container">
+            <header class="mb-5">
+                <h2>Últimas novidades</h2>
+            </header>
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <a href="./post-detail.html">
+                        <img class="last-section-posts-image" src="{% static '/img/neom-h-unsplash.jpg' %}">
+                    </a>
+                    <div class="d-flex align-items-center justify-content-between mb-2 mt-2">
+                        <small class="text-gray-600">20 may | 2016</small>
+                        <a class="small fw-bold text-uppercase small text-gray-600">Categoria</a>
+                    </div>
+                    <h3>Django Vs Flask</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore.</p>
+                </div>
+                <div class="col-md-4">
+                    <a href="./post-detail.html">
+                        <img class="last-section-posts-image" src="{% static '/img/neom-i-unsplash.jpg' %}">
+                    </a>
+                    <div class="d-flex align-items-center justify-content-between mb-2 mt-2">
+                        <small class="text-gray-600">20 may | 2016</small>
+                        <a class="small fw-bold text-uppercase small text-gray-600">Categoria</a>
+                    </div>
+                    <h3>Programação orientada a objetos</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore.</p>
+                </div>
+                <div class="col-md-4">
+                    <a href="./post-detail.html">
+                        <img class="last-section-posts-image" src="{% static '/img/neom-j-unsplash.jpg' %}">
+                    </a>
+                    <div class="d-flex align-items-center justify-content-between mb-2 mt-2">
+                        <small class="text-gray-600">20 may | 2016</small>
+                        <a class="small fw-bold text-uppercase small text-gray-600">Categoria</a>
+                    </div>
+                    <h3>10 dicas para devs</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Last posts section end -->
+
+    <!-- Subscribe section start -->
+    <section>
+        <div class="container">
+            <header class="mb-5">
+                <h2>Inscreva-se para novidades</h2>
+            </header>
+            <p class="mb-3 text-lg lh-lg fw-light">Toda semana novos conteúdos nas áreas de tecnologia e de negócios
+                para você ficar por dentro do que há de mais atual no Brasil e no mundo.</p>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control py-3" placeholder="Digite seu e-mail"
+                            aria-label="Digite seu e-mail..." aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary px-5" type="button"
+                            id="button-addon2">Inscrever</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Subscribe section end-->
+
+    <!-- Footer start -->
+    <footer class="footer text-white py-5" style="background: #212529ff">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h6 class="h3" id="footer-contact">Tech BLOG</h6>
+                    <p class="fw-light mb-1">Rua Carlos Chagas, 1652</p>
+                    <p class="fw-light mb-1">2º Andar, sala 7</p>
+                    <p class="fw-light mb-3">Monte Tecássio, Minas Gerais - Brasil</p>
+                    <ul class="list-unstyled">
+                        <li class="list-inline-item"><i class="fa-brands fa-instagram"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-facebook"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-linkedin"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-github"></i></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-2">
+                        <img class="footer-image img-fluid p-1 border-gray-500 flex-shrink-0"
+                            src="{% static '/img/neom-a-unsplash.jpg' %}">
+                        <div class="ms-2">
+                            <p class="fw-bold mb-0 text-white-50">Web com DJANGO</p>
+                            <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                        <img class="footer-image img-fluid p-1 border-gray-500 flex-shrink-0"
+                            src="{% static '/img/neom-b-unsplash.jpg' %}">
+                        <div class="ms-2 text-muted">
+                            <p class="fw-bold mb-0 text-white-50">Templates HTML</p>
+                            <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                        <img class="footer-image img-fluid p-1 border-gray-500 flex-shrink-0"
+                            src="{% static '/img/neom-c-unsplash.jpg' %}">
+                        <div class="ms-2 text-muted">
+                            <p class="fw-bold mb-0 text-white-50">Data Science: The Future</p>
+                            <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer end -->
+
+    <!-- Credits start-->
+    <div class="copyrights text-white py-4" style="background: #090909">
+        <div class="container">
+            <div class="row text-center gy-2">
+                <div class="col-md-6 text-md-start">
+                    <p class="mb-0 fw-light text-sm">© 2023. All rights reserved. Tech BLOG.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0 text-sm text-gray-400">Images by <a class="text-reset fw-light"
+                            href="https://unsplash.com/pt-br/@neom">Neon</a> - Unsplash</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Credits end -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </body>
+
 </html>
