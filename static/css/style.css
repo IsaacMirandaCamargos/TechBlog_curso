@@ -58,7 +58,7 @@ section {
 
 /*https://www.w3schools.com/howto/howto_css_hero_image.asp*/
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/img/neom-e-unsplash.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../static/img/neom-e-unsplash.jpg');
     height: 50vh;
     background-position: center;
     background-repeat: no-repeat;
