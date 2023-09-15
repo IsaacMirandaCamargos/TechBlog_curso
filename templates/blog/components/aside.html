@@ -35,32 +35,19 @@
             </div>
         </div>
     </div>
+
     <!--Start Categorias-->
     <div class="card mb-5 p-3">
         <div class="card-body">
             <h3 class="mb-5">Categorias</h3>
             <table class="table table-striped">
                 <tbody class="fw-bold">
+                    {% for category in categories %}
                     <tr>
-                        <td class="text-gray-600 cursor-pointer featured">Dev. Web</td>
+                        <td class="text-gray-600 cursor-pointer featured">{{category.name}}</td>
                         <td class="text-end text-gray-600">12</td>
                     </tr>
-                    <tr>
-                        <td class="text-gray-600 cursor-pointer selected">Dev. Mobile</td>
-                        <td class="text-end text-gray-600 selected">15</td>
-                    </tr>
-                    <tr>
-                        <td class="text-gray-600 cursor-pointer featured">Front end</td>
-                        <td class="text-end text-gray-600">32</td>
-                    </tr>
-                    <tr>
-                        <td class="text-gray-600 cursor-pointer featured">Back end</td>
-                        <td class="text-end text-gray-600">32</td>
-                    </tr>
-                    <tr>
-                        <td class="text-gray-600 cursor-pointer featured">Python</td>
-                        <td class="text-end text-gray-600">32</td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
@@ -72,11 +59,11 @@
         <div class="card-body">
             <h3 class="mb-5">TAGS</h3>
             <div class="tags-container">
-                <div><a class="tag border-gray-400 py-2 px-4 fw-bold" href="#">#Negocios</a></div>
-                <div><a class="tag border-gray-400 py-2 px-4 fw-bold" href="#">#Tecnologia</a></div>
-                <div><a class="tag border-gray-400 py-2 px-4 fw-bold" href="#">#InteligenciaArtificial</a></div>
-                <div><a class="tag border-gray-400 py-2 px-4 fw-bold" href="#">#DataScience</a></div>
-                <div><a class="tag border-gray-400 py-2 px-4 fw-bold" href="#">#BigData</a></div>
+
+                {% for tag in tags %}
+                <div><a class="tag border-gray-400 py-2 px-4 fw-bold" href="#">{{tag.name}}</a></div>
+                {% endfor %}
+
             </div>
         </div>
     <!--End Tags-->
