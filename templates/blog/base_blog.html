@@ -1,0 +1,102 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block content %}
+    <header>
+        <!-- Nav start -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">Tech BLOG</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./posts-list.html">Stories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#footer-contact">Contato</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Nav end -->
+
+        {% block hero %}
+        {% endblock %}
+    </header>
+
+    {% block main %}
+    {% endblock %}
+
+        <!-- Footer start -->
+    <footer class="footer text-white py-5" style="background: #212529ff">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h6 class="h3" id="footer-contact">Tech BLOG</h6>
+                    <p class="fw-light mb-1">Rua Carlos Chagas, 1652</p>
+                    <p class="fw-light mb-1">2º Andar, sala 7</p>
+                    <p class="fw-light mb-3">Monte Tecássio, Minas Gerais - Brasil</p>
+                    <ul class="list-unstyled">
+                        <li class="list-inline-item"><i class="fa-brands fa-instagram"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-facebook"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-linkedin"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-github"></i></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-2">
+                        <img class="footer-image img-fluid p-1 border-gray-500 flex-shrink-0"
+                            src="{% static '/img/neom-a-unsplash.jpg' %}">
+                        <div class="ms-2">
+                            <p class="fw-bold mb-0 text-white-50">Web com DJANGO</p>
+                            <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                        <img class="footer-image img-fluid p-1 border-gray-500 flex-shrink-0"
+                            src="{% static '/img/neom-b-unsplash.jpg' %}">
+                        <div class="ms-2 text-muted">
+                            <p class="fw-bold mb-0 text-white-50">Templates HTML</p>
+                            <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                        <img class="footer-image img-fluid p-1 border-gray-500 flex-shrink-0"
+                            src="{% static '/img/neom-c-unsplash.jpg' %}">
+                        <div class="ms-2 text-muted">
+                            <p class="fw-bold mb-0 text-white-50">Data Science: The Future</p>
+                            <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer end -->
+
+    <!-- Credits start-->
+    <div class="copyrights text-white py-4" style="background: #090909">
+        <div class="container">
+            <div class="row text-center gy-2">
+                <div class="col-md-6 text-md-start">
+                    <p class="mb-0 fw-light text-sm">© 2023. All rights reserved. Tech BLOG.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0 text-sm text-gray-400">Images by <a class="text-reset fw-light"
+                            href="https://unsplash.com/pt-br/@neom">Neon</a> - Unsplash</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Credits end -->
+{% endblock %}

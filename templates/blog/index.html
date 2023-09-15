@@ -1,65 +1,20 @@
+{% extends 'blog/base_blog.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,700&family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}" media="screen" />
-    <title>Tech Blog</title>
-</head>
+{% block hero %}
+<!-- Hero start -->
+<div class="hero-image">
+    <div class="hero-text">
+        <h1 class="h1">Adventure is worthwhile</h1>
+        <p>A <strong>Tech BLOG</strong> to adventurers hackers</p>
+        <a href="./posts-list.html" class="btn btn-light btn-lg">Descubra</a>
+    </div>
+</div>
+<!-- Hero end -->
+{% endblock %}
 
-<body>
-
-    <header>
-        <!-- Nav start -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html">Tech BLOG</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="./posts-list.html">Stories</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#footer-contact">Contato</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                        <button class="btn btn-outline-secondary" type="submit">Buscar</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-        <!-- Nav end -->
-
-        <!-- Hero start -->
-        <div class="hero-image">
-            <div class="hero-text">
-                <h1 class="h1">Adventure is worthwhile</h1>
-                <p>A <strong>Tech BLOG</strong> to adventurers hackers</p>
-                <a href="./posts-list.html" class="btn btn-light btn-lg">Descubra</a>
-            </div>
-        </div>
-        <!-- Hero end -->
-    </header>
-
+{% block main %}
     <!-- Introduction section start-->
     <section class="mb-0">
         <div class="container">
@@ -224,79 +179,4 @@
         </div>
     </section>
     <!-- Subscribe section end-->
-
-    <!-- Footer start -->
-    <footer class="footer text-white py-5" style="background: #212529ff">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h6 class="h3" id="footer-contact">Tech BLOG</h6>
-                    <p class="fw-light mb-1">Rua Carlos Chagas, 1652</p>
-                    <p class="fw-light mb-1">2º Andar, sala 7</p>
-                    <p class="fw-light mb-3">Monte Tecássio, Minas Gerais - Brasil</p>
-                    <ul class="list-unstyled">
-                        <li class="list-inline-item"><i class="fa-brands fa-instagram"></i></li>
-                        <li class="list-inline-item"><i class="fa-brands fa-facebook"></i></li>
-                        <li class="list-inline-item"><i class="fa-brands fa-linkedin"></i></li>
-                        <li class="list-inline-item"><i class="fa-brands fa-github"></i></li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center mb-2">
-                        <img class="footer-image img-fluid p-1 border-gray-500 flex-shrink-0"
-                            src="{% static '/img/neom-a-unsplash.jpg' %}">
-                        <div class="ms-2">
-                            <p class="fw-bold mb-0 text-white-50">Web com DJANGO</p>
-                            <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center mb-2">
-                        <img class="footer-image img-fluid p-1 border-gray-500 flex-shrink-0"
-                            src="{% static '/img/neom-b-unsplash.jpg' %}">
-                        <div class="ms-2 text-muted">
-                            <p class="fw-bold mb-0 text-white-50">Templates HTML</p>
-                            <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center mb-2">
-                        <img class="footer-image img-fluid p-1 border-gray-500 flex-shrink-0"
-                            src="{% static '/img/neom-c-unsplash.jpg' %}">
-                        <div class="ms-2 text-muted">
-                            <p class="fw-bold mb-0 text-white-50">Data Science: The Future</p>
-                            <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer end -->
-
-    <!-- Credits start-->
-    <div class="copyrights text-white py-4" style="background: #090909">
-        <div class="container">
-            <div class="row text-center gy-2">
-                <div class="col-md-6 text-md-start">
-                    <p class="mb-0 fw-light text-sm">© 2023. All rights reserved. Tech BLOG.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0 text-sm text-gray-400">Images by <a class="text-reset fw-light"
-                            href="https://unsplash.com/pt-br/@neom">Neon</a> - Unsplash</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Credits end -->
-
-    <!-- Start Scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- End Scripts-->
-    
-</body>
-
-</html>
+{% endblock %}
