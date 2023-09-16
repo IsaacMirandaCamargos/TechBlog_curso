@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Category(models.Model):
@@ -31,3 +32,21 @@ class Tag(models.Model):
     
     class Meta:
         verbose_name_plural = "Tags"
+
+class Post(models.Model):
+
+    title = models.CharField(max_length=222)
+    body = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    # relacionamentos
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    tags = models.ManyToManyField(Tag, blank=True)
+
+    # imagem
+    feature_image = models.ImageField(upload_to='featured_images')
+
+    def __str__(self):
+        return self.title
+    
