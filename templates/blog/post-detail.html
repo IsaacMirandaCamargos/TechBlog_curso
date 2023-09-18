@@ -10,12 +10,12 @@
                 <main class="col-lg-8">
                     <div class="container">
                         <img class="img-fluid w-100 mb-3"
-                            src="{% static '/img/neom-l-unsplash.jpg' %}"
+                            src="{{post.feature_image.url}}"
                             alt="principal">
-                        <h1>Diversity in Engineering: The Effect on Questions</h1>
+                        <h1>{{post.title}}</h1>
                         <div class="featured-home-post-author mb-5">
                             <img src="https://avatars.githubusercontent.com/u/88542223?v=4" alt="autor">
-                            <span>Leandro Cruvinel</span>
+                            <span>{{post.author.first_name}} {{post.author.last_name}}</span>
                             <span class="foot-divisor">|</span>
                             <span><i class="fa-regular fa-clock"></i> 2 months ago</span>
                             <span class="foot-divisor">|</span>
@@ -24,10 +24,8 @@
                     </div>
 
                     <div class="container">
-                        <p class="mb-4 text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <p class="mb-4 text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                        <p class="mb-4 text-gray-700">{{post.body}}</p>
+                        <!--<p class="mb-4 text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         <img src="https://images.unsplash.com/photo-1682695798522-6e208131916d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
@@ -37,14 +35,13 @@
                             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         <p class="mb-4 text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
 
 
                         <div class="tags-container mb-5">
-                            <div><a class="tag border-gray-400 py-2 px-4 fw-bold" href="#">#Negocios</a></div>
-                            <div><a class="tag border-gray-400 py-2 px-4 fw-bold" href="#">#FrontEnd</a></div>
-                            <div><a class="tag border-gray-400 py-2 px-4 fw-bold" href="#">#BigData</a></div>
-                            <div><a class="tag border-gray-400 py-2 px-4 fw-bold" href="#">#AI</a></div>
+                            {% for tag in post.tags.all %}
+                            <div><a class="tag border-gray-400 py-2 px-4 fw-bold" href="#">{{tag.formated_name}}</a></div>
+                            {% endfor %}
                         </div>
 
                         <div class="container px-4 mb-5">

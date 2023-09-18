@@ -7,9 +7,6 @@ def categories_and_tags(request):
     categories = Category.objects.all()
     tags = Tag.objects.all()
 
-    for tag in tags:
-        tag.name = format_tag(tag.name)
-
     context['categories'] = categories
     context['tags'] = tags
 
