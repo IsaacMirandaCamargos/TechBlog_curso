@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.contrib.auth.models import User
-
+from ckeditor_uploader.fields import RichTextUploadingField
 from blog.utils import format_tag
 
 # Create your models here.
@@ -42,7 +42,7 @@ class Tag(models.Model):
 class Post(models.Model):
 
     title = models.CharField(max_length=222)
-    body = models.TextField()
+    body = RichTextUploadingField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     # relacionamentos
