@@ -43,9 +43,14 @@
             <table class="table table-striped">
                 <tbody class="fw-bold">
                     {% for category in categories %}
-                    <tr>
-                        <td class="text-gray-600 cursor-pointer featured">{{category.name}}</td>
+                    <tr class="cursor-pointer">
+                        {% if post %}
+                        <td class="text-gray-600 {% if post.category.id == category.id %} selected {% endif %}">{{category.name}}</td>
+                        <td class="text-end text-gray-600 {% if post.category.id == category.id %} selected {% endif %}">{{category.count}}</td>
+                        {% else %}
+                        <td class="text-gray-600">{{category.name}}</td>
                         <td class="text-end text-gray-600">{{category.count}}</td>
+                        {% endif %}
                     </tr>
                     {% endfor %}
                 </tbody>
