@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # my apps
     'home',
     'blog',
+    'users',
     # third apps
     'ckeditor',
     'ckeditor_uploader',
