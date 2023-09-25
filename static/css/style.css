@@ -130,6 +130,18 @@ section {
     opacity: 1;
 }
 
+.last-posts-image {
+    width: 100px;
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.last-posts-image:hover {
+    /* border-color: var(--green); */
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+}
+
 .tags-container {
     display: flex;
     gap: 1rem;
