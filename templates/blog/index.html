@@ -116,42 +116,20 @@
                 <h2>Últimas novidades</h2>
             </header>
             <div class="row gy-4">
+                {% for lpost in last_posts %}
                 <div class="col-md-4">
                     <a href="./post-detail.html">
-                        <img class="last-section-posts-image" src="{% static '/img/neom-h-unsplash.jpg' %}">
+                        <img class="last-section-posts-image" src="{{lpost.feature_image.url}}">
                     </a>
                     <div class="d-flex align-items-center justify-content-between mb-2 mt-2">
-                        <small class="text-gray-600">20 may | 2016</small>
-                        <a class="small fw-bold text-uppercase small text-gray-600">Categoria</a>
+                        <small class="text-gray-600">{{lpost.created_at|date:"d M, Y"}}</small>
+                        <a class="small fw-bold text-uppercase small text-gray-600">{{lpost.category}}</a>
                     </div>
-                    <h3>Django Vs Flask</h3>
+                    <h3>{{lpost.title}}</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore.</p>
                 </div>
-                <div class="col-md-4">
-                    <a href="./post-detail.html">
-                        <img class="last-section-posts-image" src="{% static '/img/neom-i-unsplash.jpg' %}">
-                    </a>
-                    <div class="d-flex align-items-center justify-content-between mb-2 mt-2">
-                        <small class="text-gray-600">20 may | 2016</small>
-                        <a class="small fw-bold text-uppercase small text-gray-600">Categoria</a>
-                    </div>
-                    <h3>Programação orientada a objetos</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore.</p>
-                </div>
-                <div class="col-md-4">
-                    <a href="./post-detail.html">
-                        <img class="last-section-posts-image" src="{% static '/img/neom-j-unsplash.jpg' %}">
-                    </a>
-                    <div class="d-flex align-items-center justify-content-between mb-2 mt-2">
-                        <small class="text-gray-600">20 may | 2016</small>
-                        <a class="small fw-bold text-uppercase small text-gray-600">Categoria</a>
-                    </div>
-                    <h3>10 dicas para devs</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore.</p>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
