@@ -39,7 +39,7 @@
                 <h2 class="h1">Destaques</h2>
             </header>
             {% for mfpost in main_featured_posts %}
-            <div class="row d-flex flex-row-reverse g-0 mb-3">
+            <div class="row d-flex {% cycle 'flex-row-reverse' '' 'flex-row-reverse' %} g-0 mb-3">
                 <div class="col-lg-5">
                     <img class="featured-home-post-image h-100" src="{{mfpost.post.feature_image.url}}"
                         alt="post image description">
