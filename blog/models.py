@@ -56,3 +56,19 @@ class Post(models.Model):
     def __str__(self):
         return self.title
     
+
+class MainFeaturedPost(models.Model):
+
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.post.title
+    
+class FooterFeaturedPost(models.Model):
+
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.post.title

@@ -1,12 +1,21 @@
 from typing import Any
 from django.contrib import admin
 from django.forms import ModelForm
-from blog.models import Category, Post, Tag
+from blog.models import Category, Post, Tag, MainFeaturedPost, FooterFeaturedPost
 
 # Register your models here.
 admin.site.register(Category)
 admin.site.register(Tag)
 #admin.site.register(Post)
+
+@admin.register(MainFeaturedPost)
+class MainFeaturedPostAdmin(admin.ModelAdmin):
+    list_display = ('id', 'post', 'active')
+
+@admin.register(FooterFeaturedPost)
+class FooterFeaturedPostAdmin(admin.ModelAdmin):
+    list_display = ('id', 'post', 'active')
+
 
 class PostAdminForm(ModelForm):
 

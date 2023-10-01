@@ -54,30 +54,17 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
+                    {% for ffpost in footer_featured_posts %}
                     <div class="d-flex align-items-center mb-2">
                         <img class="footer-image img-fluid p-1 border-gray-500 flex-shrink-0"
-                            src="{% static '/img/neom-a-unsplash.jpg' %}">
+                            src="{{ffpost.post.feature_image.url}}">
                         <div class="ms-2">
-                            <p class="fw-bold mb-0 text-white-50">Web com DJANGO</p>
-                            <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                            <p class="fw-bold mb-0 text-white-50">{{ffpost.post.title}}</p>
+                            <span class="text-muted">{{ffpost.post.mini_description}}</span>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center mb-2">
-                        <img class="footer-image img-fluid p-1 border-gray-500 flex-shrink-0"
-                            src="{% static '/img/neom-b-unsplash.jpg' %}">
-                        <div class="ms-2 text-muted">
-                            <p class="fw-bold mb-0 text-white-50">Templates HTML</p>
-                            <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center mb-2">
-                        <img class="footer-image img-fluid p-1 border-gray-500 flex-shrink-0"
-                            src="{% static '/img/neom-c-unsplash.jpg' %}">
-                        <div class="ms-2 text-muted">
-                            <p class="fw-bold mb-0 text-white-50">Data Science: The Future</p>
-                            <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                        </div>
-                    </div>
+                    {% endfor %}
+
                 </div>
             </div>
         </div>
