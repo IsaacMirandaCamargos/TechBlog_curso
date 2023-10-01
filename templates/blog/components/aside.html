@@ -6,14 +6,14 @@
 
     <div class="card mb-5 p-3">
         <div class="card-body">
-            <h3 class="mb-5">Últimos posts</h3>
-            {% for lpost in last_posts %}
+            <h3 class="mb-5">Posts mais vistos</h3>
+            {% for mv_post in most_viewed %}
             <div class="d-flex align-items-center mb-2">
                 <img class="last-posts-image img-fluid flex-shrink-0"
-                    src="{{lpost.feature_image.url}}">
+                    src="{{mv_post.feature_image.url}}">
                 <div class="ms-2 text-muted">
-                    <p class="fw-bold mb-0">{{lpost.title}}</p>
-                    <p><i class="fa-solid fa-eye"></i> {% get_hit_count for lpost %} <span class="px-2">|</span> <i
+                    <p class="fw-bold mb-0">{{mv_post.title}}</p>
+                    <p><i class="fa-solid fa-eye"></i> {% get_hit_count for mv_post %} <span class="px-2">|</span> <i
                             class="fa-regular fa-comment"></i> 12</p>
                 </div>
             </div>
