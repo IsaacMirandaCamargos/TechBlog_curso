@@ -56,8 +56,8 @@
                 <div class="col-md-6">
                     {% for ffpost in footer_featured_posts %}
                     <div class="d-flex align-items-center mb-2">
-                        <img class="footer-image img-fluid p-1 border-gray-500 flex-shrink-0"
-                            src="{{ffpost.post.feature_image.url}}">
+                        <a href="{% url 'detail_post' ffpost.post.id %}"><img class="footer-image img-fluid p-1 border-gray-500 flex-shrink-0"
+                            src="{{ffpost.post.feature_image.url}}"></a>
                         <div class="ms-2">
                             <p class="fw-bold mb-0 text-white-50">{{ffpost.post.title}}</p>
                             <span class="text-muted">{{ffpost.post.mini_description}}</span>
