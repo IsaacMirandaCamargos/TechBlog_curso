@@ -56,16 +56,6 @@ section {
     overflow-x: hidden;
 }
 
-/*https://www.w3schools.com/howto/howto_css_hero_image.asp*/
-.hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../static/img/neom-e-unsplash.jpg');
-    height: 50vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-
 .hero-text {
     text-align: center;
     position: absolute;
@@ -131,15 +121,14 @@ section {
 }
 
 .last-posts-image {
-    width: 100px;
+    max-width: 100px;
     cursor: pointer;
     transition: 400ms;
 }
 
 .last-posts-image:hover {
-    /* border-color: var(--green); */
-    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.3);
     transform: scale(1.02);
+    box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.3);
 }
 
 .tags-container {
@@ -163,7 +152,7 @@ section {
     color: #118AB2;
 }
 
-.cursor-pointer{
+.cursor-pointer {
     cursor: pointer;
 }
 
@@ -174,6 +163,7 @@ section {
 .icon-container {
     transition: 200ms;
     border-radius: 8px;
+    min-height: 12vmin;
 }
 
 .icon-container:hover {
