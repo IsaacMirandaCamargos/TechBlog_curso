@@ -9,8 +9,8 @@
             <h3 class="mb-5">Posts mais vistos</h3>
             {% for mv_post in most_viewed %}
             <div class="d-flex align-items-center mb-2">
-                <img class="last-posts-image img-fluid flex-shrink-0"
-                    src="{{mv_post.feature_image.url}}">
+                <a href="{% url 'detail_post' mv_post.id %}"><img class="last-posts-image img-fluid flex-shrink-0"
+                    src="{{mv_post.feature_image.url}}"></a>
                 <div class="ms-2 text-muted">
                     <p class="fw-bold mb-0">{{mv_post.title}}</p>
                     <p><i class="fa-solid fa-eye"></i> {% get_hit_count for mv_post %} <span class="px-2">|</span> <i

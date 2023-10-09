@@ -14,7 +14,7 @@
                         <div class="row gy-4 mb-5">
                             {% for post in posts %}
                             <div class="col-xl-6">
-                                <a href="./post-detail.html">
+                                <a href="{% url 'detail_post' post.id %}">
                                     <img class="last-section-posts-image"
                                         src="{{post.feature_image.url}}">
                                 </a>
@@ -24,12 +24,7 @@
                                 </div>
                                 <h3>{{post.title}}</h3>
                                 <p>{{post.mini_description}}</p>
-                                <div class="featured-home-post-author">
-                                    <img src="{{post.author.profile.avatar.url}}" alt="autor">
-                                    <span>{{post.author.first_name}} {{post.author.last_name}}</span>
-                                    <span class="foot-divisor">|</span>
-                                    <span><i class="fa-regular fa-comment"></i> 12</span>
-                                </div>
+                                <a class="btn btn-outline-secondary" href="{% url 'detail_post' post.id %}">Ler mais</a>
                             </div>
                             {% endfor %}
 
