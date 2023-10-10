@@ -10,11 +10,9 @@
                         <header>
                             <h2 class="mb-5">Últimas novidades</h2>
                             {% if category_search %}
-                            <a class="btn btn-outline-secondary mb-3" href="{% url 'list_posts' %}"><i class="fa-solid fa-xmark"><span class="p-1"></span>{{category_search.name}}</i></a>
+                            <a class="btn btn-outline-secondary mb-3" href="{% url 'list_posts' %}"><i class="fa-solid fa-xmark"></i><span class="p-1"></span>{{category_search.name}}</a>
                             {% endif %}
-                            {% if category_search %}
-                            <a class="btn btn-outline-secondary mb-3" href="{% url 'list_posts' %}"><i class="fa-solid fa-xmark"></i> <span class='p-1'></span>{{category_search.name}}</a>
-                            {% endif %}
+                            
                         </header>
 
                         <div class="row gy-4 mb-5">
