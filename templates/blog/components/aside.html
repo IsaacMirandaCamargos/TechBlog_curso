@@ -51,7 +51,7 @@
             <div class="tags-container">
 
                 {% for tag in tags %}
-                <div><a class="tag border-gray-400 py-2 px-4 fw-bold" href="#">{{tag.formated_name}}</a></div>
+                <div><a class="tag border-gray-400 py-2 px-4 fw-bold" href="/blog?tag={{tag.id}}">{{tag.formated_name}}</a></div>
                 {% endfor %}
 
             </div>

@@ -12,6 +12,9 @@
                             {% if category_search %}
                             <a class="btn btn-outline-secondary mb-3" href="{% url 'list_posts' %}"><i class="fa-solid fa-xmark"></i><span class="p-1"></span>{{category_search.name}}</a>
                             {% endif %}
+                            {% if tag_search %}
+                            <a class="btn btn-outline-secondary mb-3" href="{% url 'list_posts' %}"><i class="fa-solid fa-xmark"></i><span class="p-1"></span>{{tag_search.formated_name}}</a>
+                            {% endif %}
                             
                         </header>
 
@@ -38,15 +41,15 @@
                                 <ul class="pagination justify-content-center mt-5">
 
                                     {% if posts.has_previous %}
-                                    <li class="page-item"><a class="page-link" href="?page=1{% if category_search %}&category={{category_search.id}}{% endif %}"><i class="fa-solid fa-angles-left"></i></a></li>
-                                    <li class="page-item"><a class="page-link" href="?page={{posts.previous_page_number}}{% if category_search %}&category={{category_search.id}}{% endif %}"><i class="fa-solid fa-chevron-left"></i></a></li>
+                                    <li class="page-item"><a class="page-link" href="?page=1{% if category_search %}&category={{category_search.id}}{% endif %}{% if tag_search %}&tag={{tag_search.id}}{% endif %}"><i class="fa-solid fa-angles-left"></i></a></li>
+                                    <li class="page-item"><a class="page-link" href="?page={{posts.previous_page_number}}{% if category_search %}&category={{category_search.id}}{% endif %}{% if tag_search %}&tag={{tag_search.id}}{% endif %}"><i class="fa-solid fa-chevron-left"></i></a></li>
                                     {% endif %}
 
                                     <li class="page-item"><a class="page-link " href="#">Página {{posts.number}} de {{posts.paginator.num_pages}}</a></li>
                                     
                                     {% if posts.has_next %}
-                                    <li class="page-item"><a class="page-link" href="?page={{posts.next_page_number}}{% if category_search %}&category={{category_search.id}}{% endif %}"><i class="fa-solid fa-chevron-right"></i></a></li>
-                                    <li class="page-item"><a class="page-link" href="?page={{posts.paginator.num_pages}}{% if category_search %}&category={{category_search.id}}{% endif %}"><i class="fa-solid fa-angles-right"></i></a></li>
+                                    <li class="page-item"><a class="page-link" href="?page={{posts.next_page_number}}{% if category_search %}&category={{category_search.id}}{% endif %}{% if tag_search %}&tag={{tag_search.id}}{% endif %}"><i class="fa-solid fa-chevron-right"></i></a></li>
+                                    <li class="page-item"><a class="page-link" href="?page={{posts.paginator.num_pages}}{% if category_search %}&category={{category_search.id}}{% endif %}{% if tag_search %}&tag={{tag_search.id}}{% endif %}"><i class="fa-solid fa-angles-right"></i></a></li>
                                     {% endif %}
                                 </ul>
                             </nav>
@@ -59,3 +62,5 @@
         </div>
     </section>
 {% endblock %}
+
+

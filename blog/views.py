@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from blog.utils import format_body
-from .models import Category, Post
+from .models import Category, Post, Tag
 from hitcount.models import HitCount
 from hitcount.views import HitCountMixin
 
@@ -10,12 +10,18 @@ def list_posts(request):
     context = dict()
 
     category_id = request.GET.get('category')
+    tag_id = request.GET.get('tag')
     
     if category_id:
         category_id = int(category_id)
         posts_list = Post.objects.filter(category=category_id).order_by('-created_at')
         category_search = Category.objects.get(pk=category_id)
         context['category_search'] = category_search
+    elif tag_id:
+        tag_id = int(tag_id)
+        posts_list = Post.objects.filter(tags__in=[tag_id]).order_by('-created_at')
+        tag_search = Tag.objects.get(pk=tag_id)
+        context['tag_search'] = tag_search
     else:
         posts_list = Post.objects.all().order_by('-created_at')
 
