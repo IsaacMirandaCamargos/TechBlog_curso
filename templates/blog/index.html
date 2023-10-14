@@ -130,12 +130,13 @@
             <p class="mb-3 text-lg lh-lg fw-light">Toda semana novos conteúdos nas áreas de tecnologia e de negócios
                 para você ficar por dentro do que há de mais atual no Brasil e no mundo.</p>
             <div class="row">
-                <form>
+                <form method="POST" action="{% url 'newsletter_signup' %}">
                     <div class="col-lg-8">
                         <div class="input-group mb-3">
+                            {% csrf_token %}
                             <!--<input >-->
                             {{form.email}}
-                            <button class="btn btn-outline-secondary px-5" type="button"
+                            <button class="btn btn-outline-secondary px-5" type="submit"
                                 id="button-addon2">Inscrever</button>
                         </div>
                     </div>
