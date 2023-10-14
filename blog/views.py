@@ -17,7 +17,7 @@ def get_filtered_posts(category_id=None, tag_id=None, text_search=None):
         filters['title__icontains'] = text_search
 
     return Post.objects.filter(**filters).order_by('-created_at')
-
+    
 def list_posts(request):
     context = dict()
 
