@@ -20,6 +20,10 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
 
     <!-- Custom Theme-->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" media="screen" />
@@ -35,7 +39,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
     <!-- End Scripts-->
+
+    <script>
+        {% for message in messages %}
+            {% if message.level_tag == 'success' %}
+                alertify.set('notifier', 'position', 'top-right')
+                alertify.success('{{message}}')
+            {% else %}
+                alertify.set('notifier', 'position', 'top-right')
+                alertify.error('{{message}}')
+            {% endif %}
+        {% endfor %}
+    </script>
     
 </body>
 
