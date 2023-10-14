@@ -10,13 +10,13 @@
                         <header>
                             <h2 class="mb-5">Últimas novidades</h2>
                             {% if category_search %}
-                            <a class="btn btn-outline-secondary mb-3" href="{% url 'list_posts' %}"><i class="fa-solid fa-xmark"></i><span class="p-1"></span>{{category_search.name}}</a>
+                            <a class="btn btn-outline-secondary mb-3" href="?{% if tag_search %}&tag={{tag_search.id}}{% endif %}{% if text_search %}&search={{text_search}}{% endif %}"><i class="fa-solid fa-xmark"></i><span class="p-1"></span>{{category_search.name}}</a>
                             {% endif %}
                             {% if tag_search %}
-                            <a class="btn btn-outline-secondary mb-3" href="{% url 'list_posts' %}"><i class="fa-solid fa-xmark"></i><span class="p-1"></span>{{tag_search.formated_name}}</a>
+                            <a class="btn btn-outline-secondary mb-3" href="?{% if category_search %}&category={{category_search.id}}{% endif %}{% if text_search %}&search={{text_search}}{% endif %}"><i class="fa-solid fa-xmark"></i><span class="p-1"></span>{{tag_search.formated_name}}</a>
                             {% endif %}
                             {% if text_search %}
-                            <a class="btn btn-outline-secondary mb-3" href="{% url 'list_posts' %}"><i class="fa-solid fa-xmark"></i><span class="p-1"></span>"{{text_search}}"</a>
+                            <a class="btn btn-outline-secondary mb-3" href="?{% if category_search %}&category={{category_search.id}}{% endif %}{% if tag_search %}&tag={{tag_search.id}}{% endif %}"><i class="fa-solid fa-xmark"></i><span class="p-1"></span>"{{text_search}}"</a>
                             {% endif %}
                             
                         </header>

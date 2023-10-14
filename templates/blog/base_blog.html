@@ -22,6 +22,12 @@
                         </li>
                     </ul>
                     <form method="GET" action="{% url 'list_posts' %}" class="d-flex">
+                        {% if category_search %}
+                            <input type="hidden" name="category" value="{{category_search.id}}">
+                        {% endif %}
+                        {% if tag_search %}
+                            <input type="hidden" name="tag" value="{{tag_search.id}}">
+                        {% endif %}
                         <input name="search" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
                         <button class="btn btn-outline-secondary" type="submit">Buscar</button>
                     </form>
