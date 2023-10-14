@@ -33,7 +33,7 @@
                         <td class="text-gray-600 {% if post.category.id == category.id %} selected {% endif %}">{{category.name}}</td>
                         <td class="text-end text-gray-600 {% if post.category.id == category.id %} selected {% endif %}">{{category.count}}</td>
                         {% else %}
-                        <td><a class="text-gray-600 fw-bold" href="/blog?category={{category.id}}">{{category.name}}</a></td>
+                        <td><a class="text-gray-600 fw-bold" href="/blog?category={{category.id}}{% if tag_search %}&tag={{tag_search.id}}{% endif %}{% if text_search %}&search={{text_search}}{% endif %}">{{category.name}}</a></td>
                         <td class="text-end text-gray-600">{{category.count}}</td>
                         {% endif %}
                     </tr>
@@ -44,6 +44,8 @@
     </div>
     <!--End Categorias-->
 
+    {% if category_search %}&category={{category_search.id}}{% endif %}{% if text_search %}&search={{text_search}}{% endif %}
+
     <!--Start Tags-->
     <div class="card mb-5 p-3">
         <div class="card-body">
@@ -51,7 +53,7 @@
             <div class="tags-container">
 
                 {% for tag in tags %}
-                <div><a class="tag border-gray-400 py-2 px-4 fw-bold" href="/blog?tag={{tag.id}}">{{tag.formated_name}}</a></div>
+                <div><a class="tag border-gray-400 py-2 px-4 fw-bold" href="/blog?tag={{tag.id}}{% if category_search %}&category={{category_search.id}}{% endif %}{% if text_search %}&search={{text_search}}{% endif %}">{{tag.formated_name}}</a></div>
                 {% endfor %}
 
             </div>

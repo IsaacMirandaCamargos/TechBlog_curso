@@ -12,7 +12,7 @@ def get_filtered_posts(category_id=None, tag_id=None, text_search=None):
     if category_id:
         filters['category'] = int(category_id)
     if tag_id:
-        filters['tags__id'] = [int(tag_id)]
+        filters['tags__in'] = [int(tag_id)]
     if text_search:
         filters['title__icontains'] = text_search
 
