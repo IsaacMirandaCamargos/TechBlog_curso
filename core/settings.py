@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'hitcount',
+    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -142,3 +143,11 @@ MEDIA_DIRS = MEDIA_ROOT
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+
+ANYMAIL = {
+    "SENDINBLUE_API_KEY": os.getenv("SENDINBLUE_API_KEY")
+}
+EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
+DEFAULT_FROM_EMAIL = os.getenv('SENDINBLUE_EMAIL_HOST')
+SENDINBLUE_API_URL = "https://api.brevo.com/v3/"
