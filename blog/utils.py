@@ -1,12 +1,18 @@
 from django.core.mail import EmailMessage
 import os
 from django.utils.text import slugify
+from blog.models import Post
 
-def format_tag(tag):
-    tag = slugify(tag)
-    tag = tag.replace("-", "")
-    tag = "#" + tag
-    return tag
+def get_next_post_id(request_id):
+    next_posts = Post.objects.filter(id__gt=request_id).order_by("id")[:1]
+    if next_posts:
+        return next_posts.get().id
+
+def get_previous_post_id(request_id):
+    previous_posts = Post.objects.filter(id__lt=request_id).order_by("-id")[:1]
+    if previous_posts:
+        return previous_posts.get().id
+
 
 def format_body(body, num_words):
 

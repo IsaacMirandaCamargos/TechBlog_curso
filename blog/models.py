@@ -2,7 +2,12 @@ from django.db import models
 from django.utils.text import slugify
 from django.contrib.auth.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
-from blog.utils import format_tag
+
+def format_tag(tag):
+    tag = slugify(tag)
+    tag = tag.replace("-", "")
+    tag = "#" + tag
+    return tag
 
 # Create your models here.
 class Category(models.Model):
