@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'hitcount',
     'anymail',
+    'comments',
 ]
 
 MIDDLEWARE = [
