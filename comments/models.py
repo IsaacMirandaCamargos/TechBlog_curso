@@ -8,7 +8,7 @@ class Comment(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField()
     text = models.TextField(max_length=600)
-    is_valid = models.BooleanField(default=False)
+    is_valid = models.BooleanField(default=True)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
 
     def __str__(self):

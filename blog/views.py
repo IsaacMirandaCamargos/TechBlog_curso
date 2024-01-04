@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from blog.utils import format_body, get_next_post_id, get_previous_post_id
 from comments.forms import CommentSubmitForm
+from comments.models import Comment
 from .models import Category, Post, Tag
 from hitcount.models import HitCount
 from hitcount.views import HitCountMixin
@@ -60,6 +61,9 @@ def detail_post(request, pk):
     context['post'] = post
     form = CommentSubmitForm()
     context['form'] = form
+    comments = Comment.objects.filter(post=post.id, is_valid=True)
+    context['comments'] = comments
+    context['count_comments'] = len(comments)
 
     hit_count = HitCount.objects.get_for_object(post)
     HitCountMixin.hit_count(request, hit_count)
