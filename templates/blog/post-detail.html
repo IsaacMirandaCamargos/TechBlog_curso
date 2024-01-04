@@ -127,26 +127,26 @@
                                     <div class="row">
                                         <div class="col">
 
-                                            <label for="exampleInputPassword1" class="form-label">Nome</label>
-                                            <input type="text" class="form-control" id="exampleInputPassword1">
+                                            <label for="nameInputComment" class="form-label">Nome</label>
+                                            {{form.name}}
 
                                         </div>
                                         <div class="col">
 
-                                            <label for="exampleInputEmail1" class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                                aria-describedby="emailHelp">
+                                            <label for="emailInputComment" class="form-label">Email</label>
+                                            {{form.email}}
                                             <div id="emailHelp" class="form-text">Não será publicado</div>
                                         </div>
 
                                     </div>
                                     <div class="row">
                                         <div class="col mb-3">
-                                        <label for="exampleFormControlTextarea1" class="form-label">Comentário</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1"
-                                            rows="3"></textarea>
+                                        <label for="textAreaComment" class="form-label">Comentário</label>
+                                        {{form.text}}
                                         </div>
                                     </div>
+
+                                    <input type="hidden" name="post" value="{{post.id}}"/>
                                     <button type="submit" class="btn btn-outline-secondary">Enviar</button>
                                 </form>
                             </div>
