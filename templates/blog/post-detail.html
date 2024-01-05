@@ -78,44 +78,21 @@
 
                         <div class="mb-5">
                             <header>
-                                <p><strong class="fw-bold">Comentários</strong> <span class="fw-light">(3)</span></p>
+                                <p><strong class="fw-bold">Comentários</strong> <span class="fw-light">({{count_comments}})</span></p>
                             </header>
 
+                            {% for comment in comments %}
                             <div class="d-flex align-items-start">
-                                <img class="user-comment-image"
-                                    src="https://avatars.githubusercontent.com/u/88542223?v=4" alt="autor">
+                                <img class="user-comment-image" src="{% static 'img/avatar.jpg' %}" alt="autor">
                                 <div class="mx-3 d-flex flex-column">
-                                    <strong>Leandro Cruvinel</strong>
-                                    <small class="fw-light text-gray-500 mb-3">May, 2016</small>
-                                    <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                        ad minim veniam.</p>
+                                    <strong>{{comment.name}}</strong>
+                                    <small class="fw-light text-gray-500 mb-3">{{comment.created_at}}</small>
+                                    <p class="text-gray-600 text-sm">{{comment.text}}</p>
                                 </div>
                             </div>
+                            {% endfor %}
 
-                            <div class="d-flex align-items-start">
-                                <img class="user-comment-image"
-                                    src="https://avatars.githubusercontent.com/u/88542223?v=4" alt="autor">
-                                <div class="mx-3 d-flex flex-column">
-                                    <strong>Leandro Cruvinel</strong>
-                                    <small class="fw-light text-gray-500 mb-3">May, 2016</small>
-                                    <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                        ad minim veniam.</p>
-                                </div>
-                            </div>
-
-                            <div class="d-flex align-items-start">
-                                <img class="user-comment-image"
-                                    src="https://avatars.githubusercontent.com/u/88542223?v=4" alt="autor">
-                                <div class="mx-3 d-flex flex-column">
-                                    <strong>Leandro Cruvinel</strong>
-                                    <small class="fw-light text-gray-500 mb-3">May, 2016</small>
-                                    <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                        ad minim veniam.</p>
-                                </div>
-                            </div>
+                           
                         </div>
 
                         <div class="mb-5">
@@ -124,6 +101,7 @@
                             </header>
                             <div>
                                 <form method="POST" action="{% url 'comment_submit' %}">
+                                    {% csrf_token %}
                                     <div class="row">
                                         <div class="col">
 
